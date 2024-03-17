@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Venue Booking System</title>
+</head>
+
+<body>
+    <header>
+        <h1>Venue Booking System</h1>
+    </header>
+
+    <body>
+        <form action="">
+
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="UserName" required autofocus>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="UserEmail" id="email" required>
+            </div>
+
+            <div>
+                <label for="title">Event Title</label>
+                <input type="text" id="title" name="Event Title" required>
+            </div>
+
+            <div>
+                <label for="description">Event Description
+                </label><br>
+                <textarea name="eventDescription" id="description" cols="20" rows="4"></textarea>
+            </div>
+
+            <div>
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <div class="time">
+                <label for="timing">Timing</label>
+                <br>
+                <input type="radio" id="fday" name="timing">
+                <label for="fday">Full Day</label>
+                <br>
+
+                <input type="radio" id="hdaym" name="timing">
+                <label for="hdaym">Half Day(Morning))</label>
+                <br>
+
+                <input type="radio" id="hdaye" name="timing">
+                <label for="hdaye">Half Day(After Noon)</label>
+                <input type="text">
+            </div>
+            <div class="venue">
+                <label for="venue">Venue</label>
+                <br>
+                <input type="radio" name="venue" id="oat">
+                <label for="oat">OAT(B Block)</label>
+                <br>
+
+                <input type="radio" name="venue" id="audi">
+                <label for="audi">Auditorium(B Block)</label>
+                <br>
+                <input type="radio" name="venue" id="chall">
+                <label for="chall">Conference Hall(C block)</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="chall">
+                <label for="chall">Conference Hall(C block)</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="dhall">
+                <label for="dhall">Delany Hall</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="scafe">
+                <label for="scafe">Studet Cafeteria</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="lrh">
+                <label for="lrh">Library Refernce Hall</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="broom">
+                <label for="broom">Board Room</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="clab">
+                <label for="clab">Computer Lab</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="bmshall">
+                <label for="bmshall">BMS Hall</label>
+                <br>
+                
+
+                <input type="radio" name="venue" id="Confhall">
+                <label for="Confhall">Conference Hall(A Block)</label>
+                <br>
+
+                <input type="radio" name="venue" id="fintanhall">
+                <label for="fintanhall">Fintan Hall(C Block)</label>
+                <br>
+                
+            </div>
+        </form>
+    </body>
+</body>
+
+</html>
