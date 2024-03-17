@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Venue Booking System</title>
+    <link rel="javascript" href="script.js">
 <style>
+    body{
+    background-image: radial-gradient(rgba(70, 131, 180, 0.416),rgba(238, 130, 238, 0.599));
+    
+}
 header{
     text-align: center;
-    border: 2px solid;
-    width: fit-content;
+    border-radius: 4px;
+    border:0.1px solid white;
+    width: 700px;
     line-height: 0.3em;
     padding: 7px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
     margin:auto;
+    backdrop-filter: blur(4490px);
 }
 form{
     margin-top: 40px;
@@ -16,180 +30,184 @@ form{
     width: 100vw;
     display: grid;
     justify-content: center;
-}
-input:not([type=radio]),textarea{
+} 
+input:not([type=radio]), textarea{
     display: block;
     border: 2px solid;
     width: 400px;
     height: 2em;
     padding: 4px;
 }
-input[type=submit]{
-    padding: 2px;
-    height:3em;
-    margin: auto;
-    text-align: center;
-    width: 300px;
-}
 div{
     padding: 10px;
 }
-
 label{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: larger;
     font-style: bold;
 }
-#st,#et{
+#st, #et{
     display: none;
 }
-.dropdown:active #st{
-    display: block;
-}
-.dropdown:active #et{
-    display: block;
+/*for custom alignment  */
+.cust{
+    margin-left:-4px;
 }
 
+input[type=submit]{
+    margin: auto;
+    background-color: cadetblue;
+    padding: 1px;    
+    text-align: center;
+    width: 200px;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: xx-large;
+    box-sizing: border-box;
+}
 </style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const customRadio = document.getElementById("custom");
+    const startTime = document.getElementById("st");
+    const endTime = document.getElementById("et");
 
-    <title>Venue Booking System</title>
+    customRadio.addEventListener("click", function() {
+        if (this.checked) {
+            startTime.style.display = "inline-block";
+            endTime.style.display = "inline-block";
+        } else {
+            startTime.style.display = "none";
+            endTime.style.display = "none";
+        }
+    });
+});
+
+</script>
+
 </head>
-
 <body>
     <header>
-        <h1>Venue Booking System</h1>
+        <h1>Venue Booking</h1><h1 style="padding:9 ;"> System</h1>
     </header>
 
-    <body>
-        <form action="">
-            <!-- here you need to link  -->
+    <form action="">
+        <div class="N">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="UserName" required autofocus>
+        </div>
 
-            <div class="N">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="UserName" required autofocus>
-            </div>
+        <div class="E">
+            <label for="email">Email</label>
+            <input type="email" name="UserEmail" id="email" required>
+        </div>
 
-            <div class="E">
-                <label for="email">Email</label>
-                <input type="email" name="UserEmail" id="email" required>
-            </div>
+        <div class="ET">
+            <label for="title">Event Title</label>
+            <input type="text" id="title" name="Event Title" required>
+        </div>
 
-            <div class="ET">
-                <label for="title">Event Title</label>
-                <input type="text" id="title" name="Event Title" required>
-            </div>
+        <div class="ED">
+            <label for="description">Event Description</label><br>
+            <textarea name="eventDescription" id="description" cols="20" rows="4"></textarea>
+        </div>
 
-            <div class="ED">
-                <label for="description">Event Description
-                </label><br>
-                <textarea name="eventDescription" id="description" cols="20" rows="4"></textarea>
-            </div>
+        <div class="D">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date">
+        </div>
 
-            <div class="D">
-                <label for="date">Date</label>
-                <input type="date" id="date" name="date">
-            </div>
+        <div class="T">
+            <label for="timing">Timing</label>
+            <br>
+            <input type="radio" id="fday" name="timing">
+            <label for="fday">Full Day</label>
+            <br>
+            <input type="radio" id="hdaym" name="timing">
+            <label for="hdaym">Half Day(Morning))</label>
+            <br>
+            <input type="radio" id="hdaye" name="timing">
+            <label for="hdaye">Half Day(After Noon)</label>
+            <br>
 
-            <div class="T">
-                <label for="timing">Timing</label>
+            <div class="dropdown">
+                <input type="radio" id="custom" class="cust" name="timing">
+                <label for="custom" class="customlabel">Custom</label>
                 <br>
-                <input type="radio" id="fday" name="timing">
-                <label for="fday">Full Day</label>
-                <br>
-
-                <input type="radio" id="hdaym" name="timing">
-                <label for="hdaym">Half Day(Morning))</label>
-                <br>
-
-                <input type="radio" id="hdaye" name="timing">
-                <label for="hdaye">Half Day(After Noon)</label>
-
-                <div class="dropdown">
-                    <input type="radio" id="custom" name="timing">
-                    <label for="custom">Custom</label>
-                <br>
-            
-                    <div id="st">
-                        <label for="stime">Start:</label>
-                        <input type="time" name="stime" id="stime">
-                    </div>
-
-                    <div id="et">
-                        <label for="etime">End:</label>
-                        <input type="time" name="etime" id="etime">
-                    </div>
-            
+                <div id="st">
+                    <label for="stime">Start:</label>
+                    <input type="time" name="stime" id="stime">
+                </div>
+                <div id="et">
+                    <label for="etime">End:</label>
+                    <input type="time" name="etime" id="etime">
                 </div>
             </div>
+        </div>
+        <div class="venue">
+            <label for="venue">Venue</label>
+            <br>
+            <input type="radio" name="venue" id="oat">
+            <label for="oat">OAT(B Block)</label>
+            <br>
 
-            <div class="venue">
-                <label for="venue">Venue</label>
-                <br>
-                <input type="radio" name="venue" id="oat">
-                <label for="oat">OAT(B Block)</label>
-                <br>
-
-                <input type="radio" name="venue" id="audi">
-                <label for="audi">Auditorium(B Block)</label>
-                <br>
-                <input type="radio" name="venue" id="chall">
-                <label for="chall">Conference Hall(C block)</label>
-                <br>
-
-
-                <input type="radio" name="venue" id="chall">
-                <label for="chall">Conference Hall(C block)</label>
-                <br>
+            <input type="radio" name="venue" id="audi">
+            <label for="audi">Auditorium(B Block)</label>
+            <br>
+            <input type="radio" name="venue" id="chall">
+            <label for="chall">Conference Hall(C block)</label>
+            <br>
 
 
-                <input type="radio" name="venue" id="dhall">
-                <label for="dhall">Delany Hall</label>
-                <br>
+            <input type="radio" name="venue" id="chall">
+            <label for="chall">Conference Hall(C block)</label>
+            <br>
 
 
-                <input type="radio" name="venue" id="scafe">
-                <label for="scafe">Studet Cafeteria</label>
-                <br>
+            <input type="radio" name="venue" id="dhall">
+            <label for="dhall">Delany Hall</label>
+            <br>
 
 
-                <input type="radio" name="venue" id="lrh">
-                <label for="lrh">Library Refernce Hall</label>
-                <br>
+            <input type="radio" name="venue" id="scafe">
+            <label for="scafe">Studet Cafeteria</label>
+            <br>
 
 
-                <input type="radio" name="venue" id="broom">
-                <label for="broom">Board Room</label>
-                <br>
+            <input type="radio" name="venue" id="lrh">
+            <label for="lrh">Library Refernce Hall</label>
+            <br>
 
 
-                <input type="radio" name="venue" id="clab">
-                <label for="clab">Computer Lab</label>
-                <br>
+            <input type="radio" name="venue" id="broom">
+            <label for="broom">Board Room</label>
+            <br>
 
 
-                <input type="radio" name="venue" id="bmshall">
-                <label for="bmshall">BMS Hall</label>
-                <br>
+            <input type="radio" name="venue" id="clab">
+            <label for="clab">Computer Lab</label>
+            <br>
 
 
-                <input type="radio" name="venue" id="Confhall">
-                <label for="Confhall">Conference Hall(A Block)</label>
-                <br>
+            <input type="radio" name="venue" id="bmshall">
+            <label for="bmshall">BMS Hall</label>
+            <br>
 
-                <input type="radio" name="venue" id="fintanhall">
-                <label for="fintanhall">Fintan Hall(C Block)</label>
-                <br>
-            </div>
-            <div>
-                <input type="submit" value="Book">
-            </div>
-        </form>
-    </body>
+
+            <input type="radio" name="venue" id="Confhall">
+            <label for="Confhall">Conference Hall(A Block)</label>
+            <br>
+
+            <input type="radio" name="venue" id="fintanhall">
+            <label for="fintanhall">Fintan Hall(C Block)</label>
+            <br>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Book">
+        </div>
+    </form>
+
+    <script src="script.js"></script> 
 </body>
-
 </html>
