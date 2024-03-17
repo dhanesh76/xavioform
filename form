@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+header{
+    text-align: center;
+    border: 2px solid;
+    width: fit-content;
+    line-height: 0.3em;
+    padding: 7px;
+    margin:auto;
+}
+form{
+    margin-top: 40px;
+    padding: 20px;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+}
+input:not([type=radio]),textarea{
+    display: block;
+    border: 2px solid;
+    width: 400px;
+    height: 2em;
+    padding: 4px;
+}
+input[type=submit]{
+    padding: 2px;
+    height:3em;
+    margin: auto;
+    text-align: center;
+    width: 300px;
+}
+div{
+    padding: 10px;
+}
+
+label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-style: bold;
+}
+#st,#et{
+    display: none;
+}
+.dropdown:active #st{
+    display: block;
+}
+.dropdown:active #et{
+    display: block;
+}
+
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+
     <title>Venue Booking System</title>
 </head>
 
@@ -16,34 +67,35 @@
 
     <body>
         <form action="">
+            <!-- here you need to link  -->
 
-            <div>
+            <div class="N">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="UserName" required autofocus>
             </div>
 
-            <div>
+            <div class="E">
                 <label for="email">Email</label>
                 <input type="email" name="UserEmail" id="email" required>
             </div>
 
-            <div>
+            <div class="ET">
                 <label for="title">Event Title</label>
                 <input type="text" id="title" name="Event Title" required>
             </div>
 
-            <div>
+            <div class="ED">
                 <label for="description">Event Description
                 </label><br>
                 <textarea name="eventDescription" id="description" cols="20" rows="4"></textarea>
             </div>
 
-            <div>
+            <div class="D">
                 <label for="date">Date</label>
                 <input type="date" id="date" name="date">
             </div>
 
-            <div class="time">
+            <div class="T">
                 <label for="timing">Timing</label>
                 <br>
                 <input type="radio" id="fday" name="timing">
@@ -56,8 +108,25 @@
 
                 <input type="radio" id="hdaye" name="timing">
                 <label for="hdaye">Half Day(After Noon)</label>
-                <input type="text">
+
+                <div class="dropdown">
+                    <input type="radio" id="custom" name="timing">
+                    <label for="custom">Custom</label>
+                <br>
+            
+                    <div id="st">
+                        <label for="stime">Start:</label>
+                        <input type="time" name="stime" id="stime">
+                    </div>
+
+                    <div id="et">
+                        <label for="etime">End:</label>
+                        <input type="time" name="etime" id="etime">
+                    </div>
+            
+                </div>
             </div>
+
             <div class="venue">
                 <label for="venue">Venue</label>
                 <br>
@@ -71,42 +140,42 @@
                 <input type="radio" name="venue" id="chall">
                 <label for="chall">Conference Hall(C block)</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="chall">
                 <label for="chall">Conference Hall(C block)</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="dhall">
                 <label for="dhall">Delany Hall</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="scafe">
                 <label for="scafe">Studet Cafeteria</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="lrh">
                 <label for="lrh">Library Refernce Hall</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="broom">
                 <label for="broom">Board Room</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="clab">
                 <label for="clab">Computer Lab</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="bmshall">
                 <label for="bmshall">BMS Hall</label>
                 <br>
-                
+
 
                 <input type="radio" name="venue" id="Confhall">
                 <label for="Confhall">Conference Hall(A Block)</label>
@@ -115,7 +184,9 @@
                 <input type="radio" name="venue" id="fintanhall">
                 <label for="fintanhall">Fintan Hall(C Block)</label>
                 <br>
-                
+            </div>
+            <div>
+                <input type="submit" value="Book">
             </div>
         </form>
     </body>
